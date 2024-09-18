@@ -1,0 +1,81 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>Adicionar Paciente</mat-card-title>
+    <br>
+    <mat-card-content>
+      <form [formGroup]="pacienteForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="nome" placeholder="Nome do Paciente" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dataNascimento" />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>CPF</mat-label>
+          <input matInput formControlName="cpf" placeholder="CPF do Paciente" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>RG</mat-label>
+          <input matInput formControlName="rg" placeholder="RG do Paciente" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Sexo</mat-label>
+          <input matInput formControlName="sexo" placeholder="Sexo" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Endereço</mat-label>
+          <input matInput formControlName="endereco" placeholder="Endereço" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Nome da Mãe</mat-label>
+          <input matInput formControlName="filiacaoMae" placeholder="Nome da Mãe" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Nome do Pai</mat-label>
+          <input matInput formControlName="filiacaoPai" placeholder="Nome do Pai" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Número do SUS</mat-label>
+          <input matInput formControlName="numeroSUS" placeholder="Número do SUS" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Local De Acomodação</mat-label>
+          <input matInput formControlName="localDeAcomodacao" placeholder="Local de Acomodação" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Tipo de Benefício</mat-label>
+          <input matInput formControlName="tipoDeBeneficio" placeholder="Tipo de Benefício" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Grau De Dependencia</mat-label>
+          <input matInput formControlName="grauDeDependencia" placeholder="Grau De Dependencia" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Observação</mat-label>
+          <input matInput formControlName="observacao" placeholder="Observação" />
+        </mat-form-field>
+
+        <div class="form-actions">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!pacienteForm.valid">Salvar</button>
+          <button mat-raised-button color="accent" type="button" (click)="onCancel()">Cancelar</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
